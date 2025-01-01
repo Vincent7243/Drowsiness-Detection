@@ -1,10 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Drowsiness Detection</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drowsiness Detection System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .alert-box {
+            background-color: #ffcc00;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .video-frame {
+            border: 10px solid #4CAF50;
+            border-radius: 10px;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Drowsiness Detection System</h1>
-    <img src="{{ url_for('video_feed') }}" width="800">
+    <header>
+        <h1>Drowsiness Detection System</h1>
+    </header>
+
+    <div class="container">
+        <div id="alertBox" class="alert-box">
+            <p>ALERT! Drowsiness Detected!</p>
+        </div>
+        <img id="videoFeed" class="video-frame" src="{{ url_for('video_feed') }}" width="800" />
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Drowsiness Detection System</p>
+    </footer>
+
+    <script>
+        // This script is for showing the alert message dynamically
+        let flag = 0;
+
+        function detectDrowsiness() {
+            // Simulate detection (adjust according to actual logic)
+            if (flag >= 20) {
+                document.getElementById('alertBox').style.display = 'block';
+            } else {
+                document.getElementById('alertBox').style.display = 'none';
+            }
+        }
+
+        // Update the detection flag here
+        setInterval(() => {
+            flag += 1;  // Simulate flag change
+            detectDrowsiness();
+        }, 1000);
+    </script>
 </body>
 </html>
