@@ -12,18 +12,26 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Đảm bảo chiều cao tối thiểu là toàn bộ viewport */
         }
+
         header {
             background-color: #4CAF50;
             color: white;
             padding: 15px;
         }
+
         h1 {
             margin: 0;
         }
+
         .container {
+            flex: 1; /* Đẩy footer xuống dưới */
             margin-top: 20px;
         }
+
         .alert-box {
             background-color: #ffcc00;
             color: #fff;
@@ -33,18 +41,18 @@
             margin-bottom: 20px;
             display: none;
         }
+
         .video-frame {
             border: 10px solid #4CAF50;
             border-radius: 10px;
         }
+
         footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
             background-color: #333;
             color: white;
             padding: 10px;
         }
+
     </style>
 </head>
 <body>
